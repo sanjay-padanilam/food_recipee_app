@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
+import 'package:foodapp/utils/constants/image_constants.dart';
+import 'package:foodapp/view/onboardingscreen/onboardingscreen.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -11,7 +13,15 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
-    // TODO: implement initState
+    Future.delayed(Duration(seconds: 3)).then(
+      (value) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OnboardingScreen(),
+            ));
+      },
+    );
     super.initState();
   }
 
@@ -20,10 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
     return Scaffold(
       backgroundColor: ColorConstants.primaryColor,
       body: Center(
-        child: Image.asset(
-          "assets/images/logo.png",
-          height: 200,
-        ),
+        child: Image.asset(height: 200, ImageConstants.logo),
       ),
     );
   }

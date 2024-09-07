@@ -8,9 +8,11 @@ class CustomVideoCard extends StatelessWidget {
   String profile;
   String username;
   String imageurl;
+  double width;
 
   CustomVideoCard(
       {super.key,
+      this.width = 280,
       required this.duration,
       required this.profile,
       required this.rating,
@@ -21,13 +23,13 @@ class CustomVideoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 280,
+      width: width,
       child: Column(
         children: [
           Container(
             padding: EdgeInsets.all(8),
             height: 180,
-            width: 280,
+            width: width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
                 image: DecorationImage(
