@@ -19,37 +19,54 @@ class Recipeedetailsscreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       backgroundColor: ColorConstants.mainWhite,
-      body: Column(
-        children: [
-          vedio_container_and_profile_section(),
-          Column(
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                child: Row(
-                  children: [
-                    Text(
-                      "Ingredients",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: ColorConstants.mainBlack),
-                    ),
-                    Spacer(),
-                    Text(
-                      "5 items",
-                      style: TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.normal),
-                    )
-                  ],
-                ),
-              ),
-              // ListView.builder(itemBuilder: (context, index) => ,)
-            ],
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            vedio_container_and_profile_section(),
+            ingredients_section()
+          ],
+        ),
       ),
+    );
+  }
+
+  Column ingredients_section() {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          child: Row(
+            children: [
+              Text(
+                "Ingredients",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: ColorConstants.mainBlack),
+              ),
+              Spacer(),
+              Text(
+                "5 items",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+              )
+            ],
+          ),
+        ),
+        // SizedBox(
+        //   height: 76,
+        //   width: 335,
+        //   child: ListView.builder(
+        //     itemCount: 11,
+        //     itemBuilder: (context, index) => Container(
+        //       child: Row(
+        //         children: [Text("😂")],
+        //       ),
+        //       color: Colors.red,
+        //       width: 335,
+        //     ),
+        //   ),
+        // )
+      ],
     );
   }
 

@@ -12,68 +12,73 @@ class Bookmarkscreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Saved recipes",
-            style: TextStyle(
-                color: ColorConstants.mainBlack, fontWeight: FontWeight.w600),
-          ),
-          bottom: TabBar(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            indicatorSize: TabBarIndicatorSize.tab,
-            dividerHeight: 0,
-            // isScrollable: true,
-            // tabAlignment: TabAlignment.start,
-            indicator: BoxDecoration(
-                color: ColorConstants.primaryColor,
-                borderRadius: BorderRadius.circular(10)),
-            labelColor: ColorConstants.mainWhite,
-            unselectedLabelColor: ColorConstants.primaryColor,
-            tabs: [
-              Tab(
-                  child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Text("Salad"),
-              )),
-              Tab(
-                  child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Text("Breakfast"),
-              )),
-            ],
-          ),
-        ),
-        body: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-            itemBuilder: (context, index) => CustomVideoCard(
-                  oncardTapped: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Recipeedetailsscreen(
-                            profile: DummyDb.trendingnowlist[index]
-                                ["profileimageurl"],
-                            username: DummyDb.trendingnowlist[index]
-                                ["username"],
-                            imageurl: DummyDb.trendingnowlist[index]
-                                ["imageurl"],
-                            recipeetitle: DummyDb.trendingnowlist[index]
-                                ["title"],
-                          ),
-                        ));
-                  },
-                  width: double.infinity,
-                  duration: DummyDb.trendingnowlist[index]["duration"],
-                  imageurl: DummyDb.trendingnowlist[index]["imageurl"],
-                  profile: DummyDb.trendingnowlist[index]["profileimageurl"],
-                  rating: DummyDb.trendingnowlist[index]["rating"],
-                  title: DummyDb.trendingnowlist[index]["title"],
-                  username: DummyDb.trendingnowlist[index]["username"],
-                ),
-            separatorBuilder: (context, index) => SizedBox(
-                  width: 16,
-                ),
-            itemCount: DummyDb.trendingnowlist.length),
+        appBar: appbar_section(),
+        body: container_builder_section(),
+      ),
+    );
+  }
+
+  ListView container_builder_section() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        itemBuilder: (context, index) => CustomVideoCard(
+              oncardTapped: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Recipeedetailsscreen(
+                        profile: DummyDb.trendingnowlist[index]
+                            ["profileimageurl"],
+                        username: DummyDb.trendingnowlist[index]["username"],
+                        imageurl: DummyDb.trendingnowlist[index]["imageurl"],
+                        recipeetitle: DummyDb.trendingnowlist[index]["title"],
+                      ),
+                    ));
+              },
+              width: double.infinity,
+              duration: DummyDb.trendingnowlist[index]["duration"],
+              imageurl: DummyDb.trendingnowlist[index]["imageurl"],
+              profile: DummyDb.trendingnowlist[index]["profileimageurl"],
+              rating: DummyDb.trendingnowlist[index]["rating"],
+              title: DummyDb.trendingnowlist[index]["title"],
+              username: DummyDb.trendingnowlist[index]["username"],
+            ),
+        separatorBuilder: (context, index) => SizedBox(
+              height: 16,
+            ),
+        itemCount: DummyDb.trendingnowlist.length);
+  }
+
+  AppBar appbar_section() {
+    return AppBar(
+      title: Text(
+        "Saved recipes",
+        style: TextStyle(
+            color: ColorConstants.mainBlack, fontWeight: FontWeight.w600),
+      ),
+      bottom: TabBar(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        indicatorSize: TabBarIndicatorSize.tab,
+        dividerHeight: 0,
+        // isScrollable: true,
+        // tabAlignment: TabAlignment.start,
+        indicator: BoxDecoration(
+            color: ColorConstants.primaryColor,
+            borderRadius: BorderRadius.circular(10)),
+        labelColor: ColorConstants.mainWhite,
+        unselectedLabelColor: ColorConstants.primaryColor,
+        tabs: [
+          Tab(
+              child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: Text("Vedio"),
+          )),
+          Tab(
+              child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: Text("Recipe"),
+          )),
+        ],
       ),
     );
   }

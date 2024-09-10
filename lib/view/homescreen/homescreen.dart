@@ -5,6 +5,7 @@ import 'package:foodapp/view/global_widgets/custom_video_card.dart';
 import 'package:foodapp/view/homescreen/widgets/popular_creator_card.dart';
 import 'package:foodapp/view/homescreen/widgets/recent_recipee_card.dart';
 import 'package:foodapp/view/homescreen/widgets/stack_card.dart';
+import 'package:foodapp/view/recipee_details_screen/recipeedetailsscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -282,6 +283,22 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => CustomVideoCard(
+                    oncardTapped: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Recipeedetailsscreen(
+                              recipeetitle: DummyDb.trendingnowlist[index]
+                                  ["title"],
+                              imageurl: DummyDb.trendingnowlist[index]
+                                  ["imageurl"],
+                              profile: DummyDb.trendingnowlist[index]
+                                  ["profileimageurl"],
+                              username: DummyDb.trendingnowlist[index]
+                                  ["username"],
+                            ),
+                          ));
+                    },
                     duration: DummyDb.trendingnowlist[index]["duration"],
                     imageurl: DummyDb.trendingnowlist[index]["imageurl"],
                     profile: DummyDb.trendingnowlist[index]["profileimageurl"],
