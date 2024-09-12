@@ -26,12 +26,13 @@ class Bookmarkscreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Recipeedetailsscreen(
-                        profile: DummyDb.trendingnowlist[index]
+                      builder: (context) => RecipeeDetailsScreen(
+                        rating: DummyDb.trendingnowlist[index]["rating"],
+                        profileImage: DummyDb.trendingnowlist[index]
                             ["profileimageurl"],
-                        username: DummyDb.trendingnowlist[index]["username"],
-                        imageurl: DummyDb.trendingnowlist[index]["imageurl"],
-                        recipeetitle: DummyDb.trendingnowlist[index]["title"],
+                        userName: DummyDb.trendingnowlist[index]["username"],
+                        image: DummyDb.trendingnowlist[index]["imageurl"],
+                        recipeeTitle: DummyDb.trendingnowlist[index]["title"],
                       ),
                     ));
               },

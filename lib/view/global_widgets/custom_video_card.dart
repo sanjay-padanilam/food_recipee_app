@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
 
 class CustomVideoCard extends StatelessWidget {
-  String title;
-  String rating;
-  String duration;
-  String profile;
-  String username;
-  String imageurl;
-  double width;
-  void Function()? oncardTapped;
+  final String title;
+  final String rating;
+  final String duration;
+  final String profile;
+  final String username;
+  final String imageurl;
+  final double width;
+  final void Function()? oncardTapped;
 
   CustomVideoCard(
       {super.key,

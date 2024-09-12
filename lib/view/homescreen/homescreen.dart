@@ -287,14 +287,14 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Recipeedetailsscreen(
-                              recipeetitle: DummyDb.trendingnowlist[index]
+                            builder: (context) => RecipeeDetailsScreen(
+                              rating: DummyDb.trendingnowlist[index]["rating"],
+                              recipeeTitle: DummyDb.trendingnowlist[index]
                                   ["title"],
-                              imageurl: DummyDb.trendingnowlist[index]
-                                  ["imageurl"],
-                              profile: DummyDb.trendingnowlist[index]
+                              image: DummyDb.trendingnowlist[index]["imageurl"],
+                              profileImage: DummyDb.trendingnowlist[index]
                                   ["profileimageurl"],
-                              username: DummyDb.trendingnowlist[index]
+                              userName: DummyDb.trendingnowlist[index]
                                   ["username"],
                             ),
                           ));

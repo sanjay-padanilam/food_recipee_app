@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
 
 class Stack_Card extends StatelessWidget {
-  String imageurl;
-  String productname;
-  String time;
+  final String imageurl;
+  final String productname;
+  final String time;
 
   Stack_Card(
       {super.key,

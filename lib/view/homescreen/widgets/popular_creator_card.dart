@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class popular_creator_card extends StatelessWidget {
-  String imageurl;
-  String name;
-  popular_creator_card({super.key, required this.imageurl, required this.name});
+  final String imageurl;
+  final String name;
+  const popular_creator_card(
+      {super.key, required this.imageurl, required this.name});
 
   @override
   Widget build(BuildContext context) {

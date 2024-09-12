@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
 
 class recent_recipee_card extends StatelessWidget {
-  String imageurl;
-  String productname;
-  String name;
+  final String imageurl;
+  final String productname;
+  final String name;
 
   recent_recipee_card(
       {super.key,
