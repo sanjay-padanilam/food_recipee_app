@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/Dummy_db.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
 import 'package:foodapp/view/global_widgets/Container_button.dart';
 import 'package:foodapp/view/global_widgets/custom_ingrediants_card.dart';
@@ -164,7 +165,11 @@ class RecipeeDetailsScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 16),
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => custom_ingrediants_card(),
+            itemBuilder: (context, index) => custom_ingrediants_card(
+                  imageurl: DummyDb.ingrediantslist[index]["img"],
+                  name: DummyDb.ingrediantslist[index]["name"],
+                  quantity: DummyDb.ingrediantslist[index]["quantity"],
+                ),
             separatorBuilder: (context, index) => SizedBox(height: 12),
             itemCount: 5)
       ],

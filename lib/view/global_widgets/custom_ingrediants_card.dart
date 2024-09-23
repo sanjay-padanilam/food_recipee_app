@@ -2,8 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
 
 class custom_ingrediants_card extends StatelessWidget {
-  const custom_ingrediants_card({super.key, this.havearrow = false});
+  const custom_ingrediants_card({
+    super.key,
+    this.havearrow = false,
+    required this.imageurl,
+    required this.name,
+    required this.quantity,
+  });
   final bool havearrow;
+  final String name;
+  final String quantity;
+  final String imageurl;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +29,13 @@ class custom_ingrediants_card extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: ColorConstants.mainWhite),
-            child: Icon(Icons.coffee),
+            child: Image(image: NetworkImage(imageurl)),
           ),
           SizedBox(
-            width: 16,
+            width: 30,
           ),
           Text(
-            "Eggs",
+            name,
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -34,7 +43,7 @@ class custom_ingrediants_card extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            "200g",
+            quantity,
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.normal,
