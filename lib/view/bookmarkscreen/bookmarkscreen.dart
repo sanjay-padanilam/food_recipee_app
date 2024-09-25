@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/Dummy_db.dart';
 import 'package:foodapp/utils/constants/colors_constants.dart';
+import 'package:foodapp/view/global_widgets/CustomRecipeeCard.dart';
+
 import 'package:foodapp/view/global_widgets/custom_video_card.dart';
 import 'package:foodapp/view/recipee_details_screen/recipeedetailsscreen.dart';
 
@@ -12,13 +14,25 @@ class Bookmarkscreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: appbar_section(),
-        body: container_builder_section(),
-      ),
+          appBar: appbar_section(),
+          body: TabBarView(
+              children: [_build_vedios_tab(), _build_recipees_tab()])),
     );
   }
 
-  ListView container_builder_section() {
+  ListView _build_recipees_tab() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        itemBuilder: (context, index) => CustomRecipeeCard(
+              rating: DummyDb.trendingnowlist[index]["rating"],
+              imageUrl: DummyDb.trendingnowlist[index]["imageurl"],
+              title: DummyDb.trendingnowlist[index]["title"],
+            ),
+        separatorBuilder: (context, index) => SizedBox(height: 16),
+        itemCount: 10);
+  }
+
+  ListView _build_vedios_tab() {
     return ListView.separated(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         itemBuilder: (context, index) => CustomVideoCard(
