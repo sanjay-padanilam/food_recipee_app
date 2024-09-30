@@ -3,6 +3,7 @@ import 'package:foodapp/utils/constants/colors_constants.dart';
 import 'package:foodapp/view/bookmarkscreen/bookmarkscreen.dart';
 import 'package:foodapp/view/create_recipee_screeen/create_recipee_Screen.dart';
 import 'package:foodapp/view/homescreen/homescreen.dart';
+import 'package:foodapp/view/notification_screen/notification_scren.dart';
 import 'package:foodapp/view/profile_Screen/profile_screen.dart';
 
 class BottomNavbarScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   List screens = [
     HomeScreen(),
     Bookmarkscreen(),
-    Container(color: Colors.blue),
+    NotificationsScreen(),
     ProfileScreen(),
   ];
   @override
