@@ -66,14 +66,14 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     children: [
                       Notificationcard(
                         title: "New recipe!",
-                        content:
+                        notification:
                             "Far far away, behind the word\nmountains, far from the countries.",
                       ),
                       SizedBox(
                         height: 12,
                       ),
                       Notificationcard(
-                          content:
+                          notification:
                               "Far far away, behind the word\nmountains, far from the countries.",
                           title: "Don’t forget to try your saved recipe")
                     ],
@@ -97,7 +97,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     children: [
                       Notificationcard(
                           title: "New recipe!",
-                          content:
+                          notification:
                               "Far far away, behind the word\nmountains, far from the countries."),
                     ],
                   ),

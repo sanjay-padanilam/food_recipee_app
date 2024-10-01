@@ -281,31 +281,31 @@ class DummyDb {
   static List ingrediantslist = [
     {
       "img":
-          "https://images.pexels.com/photos/806457/pexels-photo-806457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://as1.ftcdn.net/v2/jpg/07/15/40/26/1000_F_715402630_m3oF2c7mUrYZTqIGAqOcoJHAVyhwSYdI.jpg",
       "name": "Egg",
       "quantity": "120",
     },
     {
       "img":
-          "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://t4.ftcdn.net/jpg/02/31/84/29/240_F_231842968_qThCnmslPbEAwhg7nuW9rAy8qRNhRli7.jpg",
       "name": "Milk",
       "quantity": "342",
     },
     {
       "img":
-          "https://images.pexels.com/photos/306070/pexels-photo-306070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://t4.ftcdn.net/jpg/08/36/34/21/240_F_836342125_eisxgxH2Qv9Mg6BDw9JUeDWfVGrNlYRu.jpg",
       "name": "Vanila",
       "quantity": "231",
     },
     {
       "img":
-          "https://images.pexels.com/photos/94443/pexels-photo-94443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://t3.ftcdn.net/jpg/02/40/14/70/240_F_240147049_1DKgPqORVBXfHdqh7YZvCgDbQl7LVptM.jpg",
       "name": "Butter",
       "quantity": "50",
     },
     {
       "img":
-          "https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://t3.ftcdn.net/jpg/02/01/81/48/240_F_201814865_vm3bbljjbVF2vZDSMIP7l46mKSQROOe9.jpg",
       "name": "Bread",
       "quantity": "80",
     },

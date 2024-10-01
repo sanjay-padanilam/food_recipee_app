@@ -3,9 +3,9 @@ import 'package:foodapp/utils/constants/colors_constants.dart';
 
 class Notificationcard extends StatelessWidget {
   final String title;
-  final String content;
+  final String notification;
   const Notificationcard({
-    required this.content,
+    required this.notification,
     required this.title,
     super.key,
   });
@@ -51,7 +51,7 @@ class Notificationcard extends StatelessWidget {
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
                 ),
                 Text(
-                  content,
+                  notification,
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.normal,
@@ -61,12 +61,13 @@ class Notificationcard extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 16,
-            bottom: 40,
-            child: Text(".",
-                style: TextStyle(
-                    color: ColorConstants.primaryColor, fontSize: 60)),
-          )
+              right: 20,
+              bottom: 60,
+              child: Icon(
+                Icons.circle_sharp,
+                color: ColorConstants.primaryColor,
+                size: 10,
+              ))
         ],
       ),
     );
